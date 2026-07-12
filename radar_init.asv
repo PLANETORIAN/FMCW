@@ -1,0 +1,29 @@
+% radar_init.m - FMCW Radar Physical Parameters
+c = 3e8;                % Speed of light (m/s)
+f0 = 0;              % Carrier frequency (77 GHz, standard automotive/robotics)
+B = 150e6;              % Bandwidth (150 MHz)
+Tc = 10e-6;             % Chirp duration (10 microseconds)
+S = B / Tc;             % Sweep slope (Hz/s)
+T_step = 1 / (10*B);         
+
+% Target Parameters
+R_target = 50;          % Target distance (m)
+v_target = 15;          % Target radial velocity (m/s)
+
+% Target Physics
+fc = 77e9;
+lambda = c / fc;
+G_tx = 100; % linear gain
+G_rx = 100; % linear gain
+RCS = 10;   % m^2
+R_target = 50; % meters
+% --- Calculated Path Variables ---
+t_d = (2 * R_target) / c; % Time delay
+Prx_Ptx_ratio = (G_tx * G_rx * lambda^2 * RCS) / ((4*pi)^3 * R_target^4);
+K_target = sqrt(Prx_Ptx_ratio); % Amplitude scaling factor
+
+% Digital constraints (Your ADC)
+fs = 50e6;              % ADC Sampling frequency (50 MHz)
+Ts = 1/fs;              % Sample time
+N_samples = int32(fs * Tc);    % Number of samples per chirp (Fast-Time)
+N_chirps = 128;         % Number of chirps per frame (Slow-Time)
