@@ -61,7 +61,10 @@ N_chirps = 8;
 %     no Control System Toolbox required) ---
 % Continuous filter: H(s) = wc / (s + wc)
 % Tustin substitution: s = (2/Ts) * (1-z^-1)/(1+z^-1)
-a = w_c * Ts;              % dimensionless: wc * sample time
+% FIX: the Discrete Transfer Fcn block inherits T_step (not Ts), so the
+% coefficients must be designed for the rate the block really runs at.
+% (previously: a = w_c * Ts, which made the real cutoff ~300 MHz instead of 18 MHz)
+a = w_c * T_step;         % dimensionless: wc * sample time the block runs at
 num_d = [a/(2+a), a/(2+a)];
 den_d = [1, (a-2)/(2+a)];
 
