@@ -161,8 +161,6 @@ The "before" window numbers come from the pre-fix run with the Hamming bug corre
 
 ![Windowing](docs/images/36_fixed_windowing.png)
 
----
-
 ## Key findings
 
 1. **Range and beat frequency are exactly right.** 12.00 MHz and 120.00 m, with the echo amplitude, delay and TVG matching the formulas.
@@ -220,3 +218,4 @@ The "before" window numbers come from the pre-fix run with the Hamming bug corre
                            (plot_logged_signals.m, extra_plots.m,
                             model_block_dump.txt)
 ```
+
