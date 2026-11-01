@@ -215,7 +215,6 @@ The "before" window numbers come from the pre-fix run with the Hamming bug corre
     ├── Images.md          every figure in one page
     ├── images/            screenshots (.jpg) and MATLAB exports (.png)
     └── scripts/           helper scripts used for the notes
-                           (plot_logged_signals.m, extra_plots.m,
-                            model_block_dump.txt)
+                           (plot_logged_signals.m, extra_plots.m)
 ```
 

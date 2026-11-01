@@ -103,7 +103,7 @@ Still not fixed because they need a decision from me: items 3, 4, 5, 6, 10 and 1
 - `radar_init.m`: one line, `a = w_c * T_step` (the filter fix, issue 1).
 - `windowing.m`: windows written as formulas and forced to columns (issue 2), axes moved to the 120 m target.
 - `run_bit_depth_sweep.m` and `calibrate_adc_gain.m` are unedited; they pick up the filter fix through `radar_init`. `Model.slx` is unchanged.
-- `docs/scripts/` holds the helper scripts used for these notes: `plot_logged_signals.m`, `extra_plots.m` and `model_block_dump.txt`.
+- `docs/scripts/` holds the helper scripts used for these notes: `plot_logged_signals.m` and `extra_plots.m`.
 
 ---
 

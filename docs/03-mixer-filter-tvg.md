@@ -79,7 +79,7 @@ where $t_{fast}$ is the time since the start of the current chirp. The idea (fro
 
 ## Problem: the filter runs at the wrong sample rate
 
-When I looked at the block parameters (the dump is in `docs/scripts/model_block_dump.txt`), the `Discrete Transfer Fcn` has `SampleTime = -1`, which means *inherit*. I compiled the model and asked Simulink for the real rates:
+When I looked at the block parameters (read from the model with `get_param`), the `Discrete Transfer Fcn` has `SampleTime = -1`, which means *inherit*. I compiled the model and asked Simulink for the real rates:
 
 | Block | Compiled sample time |
 |---|---|
